@@ -1,7 +1,7 @@
 import re
 # def translator(src,dst):
 if __name__ == "__main__":
-    fin = open('verilog.v', 'r')
+    fin = open('veritest.txt', 'r')
     f = open('f_input.txt', 'w')
     f_output = open('f_output.txt', 'w')
     f_wire = open('f_wire.txt', 'w')
@@ -365,13 +365,13 @@ if __name__ == "__main__":
 
     ##deal with inner gate output and its branch
     for i in range(len(wire_arr)):
-        column5.append(2)
+        column5.append(len(gate_input_num.get(wire_arr[i])) )
         if gate_freq.get(wire_arr[i]) != None and gate_freq.get(wire_arr[i]) >= 2:
             for j in range(int(gate_freq.get(wire_arr[i]))):
                 column5.append(' ')
     ## deal with output gate 
     for i in range(len(output_arr)):
-        column5.append(2)
+        column5.append(len(gate_input_num.get(output_arr[i])))
     print(column5)
     
     ## column 6 ##
@@ -415,6 +415,10 @@ if __name__ == "__main__":
 
     # print('used', used)
     print('gate_input_id',gate_input_id)
+
+    
+
+
 
     ######################
     ## print out result ##

@@ -1,3 +1,9 @@
+Module c17 (N1, N2, N3, N6, N7, N22, N23);
+
+Input A, B, C, D;
+Output V;
+Wire M, N, O, R, S, T, U;
+
 not NAND2_1 (M, A);
 and NAND2_2 (N, B, C);
 not NAND2_3 (O, D);
@@ -6,3 +12,5 @@ Nand NAND2_5 (S, A, N);
 Nand NAND2_6 (T, N, D);
 Nand NAND2_7 (U, O, C);
 Nand NAND2_8 (V, R, S, T, U);
+
+Endmodule
