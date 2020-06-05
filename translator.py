@@ -1,7 +1,7 @@
 import re
 # def translator(src,dst):
 if __name__ == "__main__":
-    fin = open('veritest.txt', 'r')
+    fin = open('c499.txt', 'r')
     f = open('f_input.txt', 'w')
     f_output = open('f_output.txt', 'w')
     f_wire = open('f_wire.txt', 'w')
@@ -14,15 +14,15 @@ if __name__ == "__main__":
     # read content line by line
     for i in range(len(f_content)):
         # create a file only contain input output and wire information
-        if f_content[i].find("Input") == 0:
+        if f_content[i].find("input") == 0:
             f.write(f_content[i])
-        elif f_content[i].find("Output") == 0:
+        elif f_content[i].find("output") == 0:
             f_output.write(f_content[i])
             # print(f_content[i])
-        elif f_content[i].find("Wire") == 0:
+        elif f_content[i].find("wire") == 0:
             f_wire.write(f_content[i])
         # create a file only contain gate information
-        elif f_content[i].find("Module") == -1 and f_content[i].find("Endmodule") == -1 and f_content[i] not in ['\n','\r\n']: 
+        elif f_content[i].find("module") == -1 and f_content[i].find("endmodule") == -1 and f_content[i] not in ['\n','\r\n']: 
             f_gate.write(f_content[i])
             # print(f_content[i])
     fin.close()
@@ -45,18 +45,26 @@ if __name__ == "__main__":
     # print("qq",flist_in_out_wire)
     count = 0
     inarr_num = 0
+    record_index1 = 0
+    record_index2 = 0
+
     # print line by line
     for i in range(len(flist_in)):
         sepe_arr = flist_in[i].split()
-        if sepe_arr[0].find('Input[') == 0:
+        if sepe_arr[0].find('input[') == 0:
             # print("here?")
             # print word by word
             count = 0
             for j in sepe_arr:
-                # eliminate the the first one input[8:0] and extract its number
+                # eliminate the the first one input[0:8] and extract its number
                 if count == 0:
-                    inarr_num = int(j[6])
-                    # print(inarr_num)
+                    for k in range(len(j)):
+                        if j[k] == ':':
+                            record_index1 = k+1
+                        if j[k] == ']':
+                            record_index2 = k
+                    inarr_num = int(j[record_index1:record_index2])
+                    # print('inarr_num: ',inarr_num)
                     count += 1
                 else:
                     # using th number we acquire from above and input the input array 
@@ -83,18 +91,25 @@ if __name__ == "__main__":
     # print("qq",flist_in_out_wire)
     count = 0
     outarr_num = 0
+    record_index1 = 0
+    record_index2 = 0
     # print line by line
     for i in range(len(flist_out)):
         sepe_arr = flist_out[i].split()
-        if sepe_arr[0].find('Output[') == 0:
-            # print("here?")
+        if sepe_arr[0].find('output[') == 0:
             # print word by word
             count = 0
             for j in sepe_arr:
-                # eliminate the the first one output[8:0] and extract its number
+                # eliminate the the first one output[0:8] and extract its number
                 if count == 0:
-                    outarr_num = int(j[7])
-                    # print(inarr_num)
+                    for k in range(len(j)):
+                        if j[k] == ':':
+                            record_index1 = k+1
+                        if j[k] == ']':
+                            record_index2 = k     
+                    outarr_num = int(j[record_index1:record_index2])
+                    # outarr_num = int(j[9])
+                    print(outarr_num)
                     count += 1
                 else:
                     # using th number we acquire from above and input the input array 
@@ -121,18 +136,29 @@ if __name__ == "__main__":
     # print("qq",flist_in_out_wire)
     count = 0
     wirearr_num = 0
+    record_index1 = 0
+    record_index2 = 0
     # print line by line
     for i in range(len(flist_wire)):
         sepe_arr = flist_wire[i].split()
-        if sepe_arr[0].find('Wire[') == 0:
+        if sepe_arr[0].find('wire[') == 0:
             # print("here?")
             # print word by word
             count = 0
             for j in sepe_arr:
-                # eliminate the the first one wire[8:0] and extract its number
+                # eliminate the the first one wire[0:8] and extract its number
                 if count == 0:
-                    wirearr_num = int(j[5])
-                    # print(inarr_num)
+                    for k in range(len(j)):
+                        if j[k] == ':':
+                            record_index1 = k+1
+                            print(record_index1)
+                        if j[k] == ']':
+                            record_index2 = k
+                    # record_index1 = record_index1 + record_index2 
+                    print(record_index1)     
+                    wirearr_num = int(j[record_index1:record_index2])
+                    print(wirearr_num)
+                    # wirearr_num = int(j[7])
                     count += 1
                 else:
                     # using th number we acquire from above and input the input array 
@@ -280,7 +306,7 @@ if __name__ == "__main__":
             column3.append(4)
         elif wire_gate_relation.get(wire_arr[i]) == 'not':
             column3.append(5)
-        elif wire_gate_relation.get(wire_arr[i]) == 'Nand':
+        elif wire_gate_relation.get(wire_arr[i]) == 'nand':
             column3.append(6)
         elif wire_gate_relation.get(wire_arr[i]) == 'and':
             column3.append(7)
@@ -300,7 +326,7 @@ if __name__ == "__main__":
             column3.append(4)
         elif wire_gate_relation.get(output_arr[i]) == 'not':
             column3.append(5)
-        elif wire_gate_relation.get(output_arr[i]) == 'Nand':
+        elif wire_gate_relation.get(output_arr[i]) == 'nand':
             column3.append(6)
         elif wire_gate_relation.get(output_arr[i]) == 'and':
             column3.append(7)
@@ -350,7 +376,10 @@ if __name__ == "__main__":
         # nonstopcount += 1
     print(column4)
 
+    ##############
     ## column 5 ##
+    ##############
+
     ## NOTE: not sure column5.append(' ') or column5.append('')
     ## deal with input(0) and its branch(empty)
     for i in range(len(input_arr)):
@@ -415,9 +444,6 @@ if __name__ == "__main__":
 
     # print('used', used)
     print('gate_input_id',gate_input_id)
-
-    
-
 
 
     ######################

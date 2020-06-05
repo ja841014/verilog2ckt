@@ -1,1 +1,2 @@
-Wire M, N, O, R, S, T, U;
+wire[0:15]    XA;
+wire[0:7]     XB, XC, XD, XE, F, G, H;
