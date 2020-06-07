@@ -1,1 +1,1 @@
-input[0:8] E, A;
+input[8:0] E, A;

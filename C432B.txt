@@ -1,9 +1,9 @@
 module PriorityB (E, X1, B, PB, X2);
 
-input[0:8] E, X1, B;
+input[8:0] E, X1, B;
 output     PB;
-output[0:8] X2;
-wire[0:8] Eb, EbB, XEB;
+output[8:0] X2;
+wire[8:0] Eb, EbB, XEB;
 wire PBi;
 
 not Eb0 (Eb[0], E[0]);

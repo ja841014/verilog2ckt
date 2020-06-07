@@ -1,6 +1,6 @@
 module PriorityA (E, A, PA, X1);
 
-input[0:8] E, A;
+input[8:0] E, A;
 output     PA;
 output[0:8] X1;
 wire[0:8] Ab, EAb;

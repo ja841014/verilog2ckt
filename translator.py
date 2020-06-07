@@ -52,19 +52,33 @@ if __name__ == "__main__":
     # print line by line
     for i in range(len(flist_in)):
         sepe_arr = flist_in[i].split()
+
+        # sepe_arr
         if sepe_arr[0].find('input[') == 0:
-            # print("here?")
+
+            target_inarr_num = flist_in[i].split(']')[0]
+            print("target_inarr_num: ", target_inarr_num)
+            first_num = target_inarr_num.split(':')[0][6:]
+            print("first_num: ", first_num)
+            second_num = target_inarr_num.split(':')[1]
+            print("second_num: ", second_num)
+            if int(first_num) > int(second_num):
+                inarr_num = int(first_num)
+            else:
+                inarr_num = int(second_num)
+
+
             # print word by word
             count = 0
             for j in sepe_arr:
                 # eliminate the the first one input[0:8] and extract its number
                 if count == 0:
-                    for k in range(len(j)):
-                        if j[k] == ':':
-                            record_index1 = k+1
-                        if j[k] == ']':
-                            record_index2 = k
-                    inarr_num = int(j[record_index1:record_index2])
+                    # for k in range(len(j)):
+                    #     if j[k] == ':':
+                    #         record_index1 = k+1
+                    #     if j[k] == ']':
+                    #         record_index2 = k
+                    # inarr_num = int(j[record_index1:record_index2])
                     # print('inarr_num: ',inarr_num)
                     count += 1
                 else:
@@ -97,20 +111,37 @@ if __name__ == "__main__":
     # print line by line
     for i in range(len(flist_out)):
         sepe_arr = flist_out[i].split()
+
+
+
+
         if sepe_arr[0].find('output[') == 0:
+
+            target_outarr_num = flist_out[i].split(']')[0]
+            print("target_outarr_num: ", target_outarr_num)
+            first_num = target_outarr_num.split(':')[0][7:]
+            print("first_num: ", first_num)
+            second_num = target_outarr_num.split(':')[1]
+            print("second_num: ", second_num)
+            if int(first_num) > int(second_num):
+                outarr_num = int(first_num)
+            else:
+                outarr_num = int(second_num)
+
+
             # print word by word
             count = 0
             for j in sepe_arr:
                 # eliminate the the first one output[0:8] and extract its number
                 if count == 0:
-                    for k in range(len(j)):
-                        if j[k] == ':':
-                            record_index1 = k+1
-                        if j[k] == ']':
-                            record_index2 = k     
-                    outarr_num = int(j[record_index1:record_index2])
-                    # outarr_num = int(j[9])
-                    # print(outarr_num)
+                    # for k in range(len(j)):
+                    #     if j[k] == ':':
+                    #         record_index1 = k+1
+                    #     if j[k] == ']':
+                    #         record_index2 = k     
+                    # outarr_num = int(j[record_index1:record_index2])
+                    # # outarr_num = int(j[9])
+                    # # print(outarr_num)
                     count += 1
                 else:
                     # using th number we acquire from above and input the input array 
@@ -142,22 +173,34 @@ if __name__ == "__main__":
     # print line by line
     for i in range(len(flist_wire)):
         sepe_arr = flist_wire[i].split()
+
         if sepe_arr[0].find('wire[') == 0:
-            # print("here?")
+
+            target_wirearr_num = flist_wire[i].split(']')[0]
+            print("target_wirearr_num: ", target_wirearr_num)
+            first_num = target_wirearr_num.split(':')[0][5:]
+            print("first_num: ", first_num)
+            second_num = target_wirearr_num.split(':')[1]
+            print("second_num: ", second_num)
+            if int(first_num) > int(second_num):
+                wirearr_num = int(first_num)
+            else:
+                wirearr_num = int(second_num)
+
             # print word by word
             count = 0
             for j in sepe_arr:
                 # eliminate the the first one wire[0:8] and extract its number
                 if count == 0:
-                    for k in range(len(j)):
-                        if j[k] == ':':
-                            record_index1 = k+1
-                            print(record_index1)
-                        if j[k] == ']':
-                            record_index2 = k
-                    # record_index1 = record_index1 + record_index2 
-                    # print(record_index1)     
-                    wirearr_num = int(j[record_index1:record_index2])
+                    # for k in range(len(j)):
+                    #     if j[k] == ':':
+                    #         record_index1 = k+1
+                    #         print(record_index1)
+                    #     if j[k] == ']':
+                    #         record_index2 = k
+                    # # record_index1 = record_index1 + record_index2 
+                    # # print(record_index1)     
+                    # wirearr_num = int(j[record_index1:record_index2])
                     # print(wirearr_num)
                     # wirearr_num = int(j[7])
                     count += 1
