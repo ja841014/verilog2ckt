@@ -1,2 +1,1 @@
-wire[0:8] Ab, EAb;
-wire PAi;
+wire M, N, O, R, S, T, U;

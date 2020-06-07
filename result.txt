@@ -1,65 +1,22 @@
-E[0]_1 PriorityA_1 0 1 0 
-E[1]_1 PriorityA_2 0 1 0 
-E[2]_1 PriorityA_3 0 1 0 
-E[3]_1 PriorityA_4 0 1 0 
-E[4]_1 PriorityA_5 0 1 0 
-E[5]_1 PriorityA_6 0 1 0 
-E[6]_1 PriorityA_7 0 1 0 
-E[7]_1 PriorityA_8 0 1 0 
-E[8]_1 PriorityA_9 0 1 0 
-A[0]_1 PriorityA_10 0 1 0 
-A[1]_1 PriorityA_11 0 1 0 
-A[2]_1 PriorityA_12 0 1 0 
-A[3]_1 PriorityA_13 0 1 0 
-A[4]_1 PriorityA_14 0 1 0 
-A[5]_1 PriorityA_15 0 1 0 
-A[6]_1 PriorityA_16 0 1 0 
-A[7]_1 PriorityA_17 0 1 0 
-A[8]_1 PriorityA_18 0 1 0 
-Ab[0]_0 PriorityA_19 5 1 1 PriorityA_10 
-Ab[1]_0 PriorityA_20 5 1 1 PriorityA_11 
-Ab[2]_0 PriorityA_21 5 1 1 PriorityA_12 
-Ab[3]_0 PriorityA_22 5 1 1 PriorityA_13 
-Ab[4]_0 PriorityA_23 5 1 1 PriorityA_14 
-Ab[5]_0 PriorityA_24 5 1 1 PriorityA_15 
-Ab[6]_0 PriorityA_25 5 1 1 PriorityA_16 
-Ab[7]_0 PriorityA_26 5 1 1 PriorityA_17 
-Ab[8]_0 PriorityA_27 5 1 1 PriorityA_18 
-EAb[0]_0 PriorityA_28 6 2 2 PriorityA_19 PriorityA_1 
-EAb[0]_2 PriorityA_29 1 PriorityA_28   
-EAb[0]_2 PriorityA_30 1 PriorityA_28   
-EAb[1]_0 PriorityA_31 6 2 2 PriorityA_20 PriorityA_2 
-EAb[1]_2 PriorityA_32 1 PriorityA_31   
-EAb[1]_2 PriorityA_33 1 PriorityA_31   
-EAb[2]_0 PriorityA_34 6 2 2 PriorityA_21 PriorityA_3 
-EAb[2]_2 PriorityA_35 1 PriorityA_34   
-EAb[2]_2 PriorityA_36 1 PriorityA_34   
-EAb[3]_0 PriorityA_37 6 2 2 PriorityA_22 PriorityA_4 
-EAb[3]_2 PriorityA_38 1 PriorityA_37   
-EAb[3]_2 PriorityA_39 1 PriorityA_37   
-EAb[4]_0 PriorityA_40 6 2 2 PriorityA_23 PriorityA_5 
-EAb[4]_2 PriorityA_41 1 PriorityA_40   
-EAb[4]_2 PriorityA_42 1 PriorityA_40   
-EAb[5]_0 PriorityA_43 6 2 2 PriorityA_24 PriorityA_6 
-EAb[5]_2 PriorityA_44 1 PriorityA_43   
-EAb[5]_2 PriorityA_45 1 PriorityA_43   
-EAb[6]_0 PriorityA_46 6 2 2 PriorityA_25 PriorityA_7 
-EAb[6]_2 PriorityA_47 1 PriorityA_46   
-EAb[6]_2 PriorityA_48 1 PriorityA_46   
-EAb[7]_0 PriorityA_49 6 2 2 PriorityA_26 PriorityA_8 
-EAb[7]_2 PriorityA_50 1 PriorityA_49   
-EAb[7]_2 PriorityA_51 1 PriorityA_49   
-EAb[8]_0 PriorityA_52 6 2 2 PriorityA_27 PriorityA_9 
-EAb[8]_2 PriorityA_53 1 PriorityA_52   
-EAb[8]_2 PriorityA_54 1 PriorityA_52   
-PAi_0 PriorityA_55 7 1 8 PriorityA_29 PriorityA_32 PriorityA_35 PriorityA_38 PriorityA_41 PriorityA_44 PriorityA_47 PriorityA_50 
-PA_3 PriorityA_56 6 0 2 PriorityA_55 PriorityA_53 
-X1[0]_3 PriorityA_57 2 0 2 PriorityA_57 PriorityA_30 
-X1[1]_3 PriorityA_58 2 0 2 PriorityA_58 PriorityA_33 
-X1[2]_3 PriorityA_59 2 0 2 PriorityA_59 PriorityA_37 
-X1[3]_3 PriorityA_60 2 0 2 PriorityA_60 PriorityA_42 
-X1[4]_3 PriorityA_61 2 0 2 PriorityA_61 PriorityA_45 
-X1[5]_3 PriorityA_62 2 0 2 PriorityA_62 PriorityA_49 
-X1[6]_3 PriorityA_63 2 0 2 PriorityA_63 PriorityA_54 
-X1[7]_3 PriorityA_64 2 0 2 PriorityA_64 PriorityA_65 
-X1[8]_3 PriorityA_65 2 0 2 PriorityA_66 PriorityA_67 
+A_1 c17_1 0 2 0 
+A_2 c17_2 1 c17_1   
+A_2 c17_3 1 c17_1   
+B_1 c17_4 0 2 0 
+B_2 c17_5 1 c17_4   
+B_2 c17_6 1 c17_4   
+C_1 c17_7 0 2 0 
+C_2 c17_8 1 c17_7   
+C_2 c17_9 1 c17_7   
+D_1 c17_10 0 2 0 
+D_2 c17_11 1 c17_10   
+D_2 c17_12 1 c17_10   
+M_0 c17_13 5 1 1 c17_2 
+N_0 c17_14 7 2 2 c17_5 c17_8 
+N_2 c17_15 1 c17_14   
+N_2 c17_16 1 c17_14   
+O_0 c17_17 5 1 1 c17_11 
+R_0 c17_18 6 1 2 c17_6 c17_13 
+S_0 c17_19 6 1 2 c17_3 c17_16 
+T_0 c17_20 6 1 2 c17_15 c17_12 
+U_0 c17_21 6 1 2 c17_17 c17_9 
+V_3 c17_22 6 0 4 c17_18 c17_19 c17_20 c17_21 
