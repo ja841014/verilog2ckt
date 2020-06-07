@@ -1,209 +1,65 @@
-1 1 0 2 0 
-2 2 1 1   
-2 3 1 1   
-1 4 0 2 0 
-2 5 1 4   
-2 6 1 4   
-1 7 0 2 0 
-2 8 1 7   
-2 9 1 7   
-1 10 0 2 0 
-2 11 1 10   
-2 12 1 10   
-1 13 0 2 0 
-2 14 1 13   
-2 15 1 13   
-1 16 0 2 0 
-2 17 1 16   
-2 18 1 16   
-1 19 0 2 0 
-2 20 1 19   
-2 21 1 19   
-1 22 0 2 0 
-2 23 1 22   
-2 24 1 22   
-1 25 0 2 0 
-2 26 1 25   
-2 27 1 25   
-1 28 0 2 0 
-2 29 1 28   
-2 30 1 28   
-1 31 0 2 0 
-2 32 1 31   
-2 33 1 31   
-1 34 0 2 0 
-2 35 1 34   
-2 36 1 34   
-1 37 0 2 0 
-2 38 1 37   
-2 39 1 37   
-1 40 0 2 0 
-2 41 1 40   
-2 42 1 40   
-1 43 0 2 0 
-2 44 1 43   
-2 45 1 43   
-1 46 0 2 0 
-2 47 1 46   
-2 48 1 46   
-1 49 0 2 0 
-2 50 1 49   
-2 51 1 49   
-1 52 0 2 0 
-2 53 1 52   
-2 54 1 52   
-1 55 0 2 0 
-2 56 1 55   
-2 57 1 55   
-1 58 0 2 0 
-2 59 1 58   
-2 60 1 58   
-1 61 0 2 0 
-2 62 1 61   
-2 63 1 61   
-1 64 0 2 0 
-2 65 1 64   
-2 66 1 64   
-1 67 0 2 0 
-2 68 1 67   
-2 69 1 67   
-1 70 0 2 0 
-2 71 1 70   
-2 72 1 70   
-1 73 0 2 0 
-2 74 1 73   
-2 75 1 73   
-1 76 0 2 0 
-2 77 1 76   
-2 78 1 76   
-1 79 0 2 0 
-2 80 1 79   
-2 81 1 79   
-1 82 0 2 0 
-2 83 1 82   
-2 84 1 82   
-1 85 0 2 0 
-2 86 1 85   
-2 87 1 85   
-1 88 0 2 0 
-2 89 1 88   
-2 90 1 88   
-1 91 0 2 0 
-2 92 1 91   
-2 93 1 91   
-1 94 0 2 0 
-2 95 1 94   
-2 96 1 94   
-1 97 0 1 0 
-1 98 0 1 0 
-1 99 0 1 0 
-1 100 0 1 0 
-1 101 0 1 0 
-1 102 0 1 0 
-1 103 0 1 0 
-1 104 0 1 0 
-1 105 0 8 0 
-2 106 1 105   
-2 107 1 105   
-2 108 1 105   
-2 109 1 105   
-2 110 1 105   
-2 111 1 105   
-2 112 1 105   
-2 113 1 105   
-0 114 2 1 2 2 5 
-0 115 2 1 2 8 11 
-0 116 2 1 2 14 17 
-0 117 2 1 2 20 23 
-0 118 2 1 2 26 29 
-0 119 2 1 2 32 35 
-0 120 2 1 2 38 41 
-0 121 2 1 2 44 47 
-0 122 2 1 2 50 53 
-0 123 2 1 2 56 59 
-0 124 2 1 2 62 65 
-0 125 2 1 2 68 71 
-0 126 2 1 2 74 77 
-0 127 2 1 2 80 83 
-0 128 2 1 2 86 89 
-0 129 2 1 2 92 95 
-0 130 2 1 2 3 15 
-0 131 2 1 2 6 18 
-0 132 2 1 2 9 21 
-0 133 2 1 2 12 24 
-0 134 2 1 2 51 63 
-0 135 2 1 2 54 66 
-0 136 2 1 2 57 69 
-0 137 2 1 2 60 72 
-0 138 2 1 2 27 39 
-0 139 2 1 2 30 42 
-0 140 2 1 2 33 45 
-0 141 2 1 2 36 48 
-0 142 2 1 2 75 87 
-0 143 2 1 2 78 90 
-0 144 2 1 2 81 93 
-0 145 2 1 2 84 96 
-0 146 2 1 2 190 194 
-0 147 2 1 2 191 195 
-0 148 2 1 2 192 196 
-0 149 2 1 2 193 197 
-0 150 2 1 2 186 198 
-0 151 2 1 2 187 199 
-0 152 2 1 2 188 200 
-0 153 2 1 2 189 201 
-0 154 2 1 2 130 138 
-0 155 2 1 2 131 139 
-0 156 2 1 2 132 140 
-0 157 2 1 2 133 141 
-0 158 2 1 2 134 142 
-0 159 2 1 2 135 143 
-0 160 2 1 2 136 144 
-0 161 2 1 2 137 145 
-0 162 2 2 2 114 115 
-2 163 1 162   
-2 164 1 162   
-0 165 2 2 2 116 117 
-2 166 1 165   
-2 167 1 165   
-0 168 2 2 2 118 119 
-2 169 1 168   
-2 170 1 168   
-0 171 2 2 2 120 121 
-2 172 1 171   
-2 173 1 171   
-0 174 2 2 2 122 123 
-2 175 1 174   
-2 176 1 174   
-0 177 2 2 2 124 125 
-2 178 1 177   
-2 179 1 177   
-0 180 2 2 2 126 127 
-2 181 1 180   
-2 182 1 180   
-0 183 2 2 2 128 129 
-2 184 1 183   
-2 185 1 183   
-0 186 2 1 2 163 166 
-0 187 2 1 2 169 172 
-0 188 2 1 2 164 170 
-0 189 2 1 2 167 173 
-0 190 2 1 2 175 178 
-0 191 2 1 2 181 184 
-0 192 2 1 2 176 182 
-0 193 2 1 2 179 185 
-0 194 7 1 2 97 106 
-0 195 7 1 2 98 107 
-0 196 7 1 2 99 108 
-0 197 7 1 2 100 109 
-0 198 7 1 2 101 110 
-0 199 7 1 2 102 111 
-0 200 7 1 2 103 112 
-0 201 7 1 2 104 113 
-3 202 2 0 2 146 154 
-3 203 2 0 2 147 155 
-3 204 2 0 2 148 156 
-3 205 2 0 2 149 157 
-3 206 2 0 2 150 158 
-3 207 2 0 2 151 159 
-3 208 2 0 2 152 160 
-3 209 2 0 2 153 161 
+E[0]_1 PriorityA_1 0 1 0 
+E[1]_1 PriorityA_2 0 1 0 
+E[2]_1 PriorityA_3 0 1 0 
+E[3]_1 PriorityA_4 0 1 0 
+E[4]_1 PriorityA_5 0 1 0 
+E[5]_1 PriorityA_6 0 1 0 
+E[6]_1 PriorityA_7 0 1 0 
+E[7]_1 PriorityA_8 0 1 0 
+E[8]_1 PriorityA_9 0 1 0 
+A[0]_1 PriorityA_10 0 1 0 
+A[1]_1 PriorityA_11 0 1 0 
+A[2]_1 PriorityA_12 0 1 0 
+A[3]_1 PriorityA_13 0 1 0 
+A[4]_1 PriorityA_14 0 1 0 
+A[5]_1 PriorityA_15 0 1 0 
+A[6]_1 PriorityA_16 0 1 0 
+A[7]_1 PriorityA_17 0 1 0 
+A[8]_1 PriorityA_18 0 1 0 
+Ab[0]_0 PriorityA_19 5 1 1 PriorityA_10 
+Ab[1]_0 PriorityA_20 5 1 1 PriorityA_11 
+Ab[2]_0 PriorityA_21 5 1 1 PriorityA_12 
+Ab[3]_0 PriorityA_22 5 1 1 PriorityA_13 
+Ab[4]_0 PriorityA_23 5 1 1 PriorityA_14 
+Ab[5]_0 PriorityA_24 5 1 1 PriorityA_15 
+Ab[6]_0 PriorityA_25 5 1 1 PriorityA_16 
+Ab[7]_0 PriorityA_26 5 1 1 PriorityA_17 
+Ab[8]_0 PriorityA_27 5 1 1 PriorityA_18 
+EAb[0]_0 PriorityA_28 6 2 2 PriorityA_19 PriorityA_1 
+EAb[0]_2 PriorityA_29 1 PriorityA_28   
+EAb[0]_2 PriorityA_30 1 PriorityA_28   
+EAb[1]_0 PriorityA_31 6 2 2 PriorityA_20 PriorityA_2 
+EAb[1]_2 PriorityA_32 1 PriorityA_31   
+EAb[1]_2 PriorityA_33 1 PriorityA_31   
+EAb[2]_0 PriorityA_34 6 2 2 PriorityA_21 PriorityA_3 
+EAb[2]_2 PriorityA_35 1 PriorityA_34   
+EAb[2]_2 PriorityA_36 1 PriorityA_34   
+EAb[3]_0 PriorityA_37 6 2 2 PriorityA_22 PriorityA_4 
+EAb[3]_2 PriorityA_38 1 PriorityA_37   
+EAb[3]_2 PriorityA_39 1 PriorityA_37   
+EAb[4]_0 PriorityA_40 6 2 2 PriorityA_23 PriorityA_5 
+EAb[4]_2 PriorityA_41 1 PriorityA_40   
+EAb[4]_2 PriorityA_42 1 PriorityA_40   
+EAb[5]_0 PriorityA_43 6 2 2 PriorityA_24 PriorityA_6 
+EAb[5]_2 PriorityA_44 1 PriorityA_43   
+EAb[5]_2 PriorityA_45 1 PriorityA_43   
+EAb[6]_0 PriorityA_46 6 2 2 PriorityA_25 PriorityA_7 
+EAb[6]_2 PriorityA_47 1 PriorityA_46   
+EAb[6]_2 PriorityA_48 1 PriorityA_46   
+EAb[7]_0 PriorityA_49 6 2 2 PriorityA_26 PriorityA_8 
+EAb[7]_2 PriorityA_50 1 PriorityA_49   
+EAb[7]_2 PriorityA_51 1 PriorityA_49   
+EAb[8]_0 PriorityA_52 6 2 2 PriorityA_27 PriorityA_9 
+EAb[8]_2 PriorityA_53 1 PriorityA_52   
+EAb[8]_2 PriorityA_54 1 PriorityA_52   
+PAi_0 PriorityA_55 7 1 8 PriorityA_29 PriorityA_32 PriorityA_35 PriorityA_38 PriorityA_41 PriorityA_44 PriorityA_47 PriorityA_50 
+PA_3 PriorityA_56 6 0 2 PriorityA_55 PriorityA_53 
+X1[0]_3 PriorityA_57 2 0 2 PriorityA_57 PriorityA_30 
+X1[1]_3 PriorityA_58 2 0 2 PriorityA_58 PriorityA_33 
+X1[2]_3 PriorityA_59 2 0 2 PriorityA_59 PriorityA_37 
+X1[3]_3 PriorityA_60 2 0 2 PriorityA_60 PriorityA_42 
+X1[4]_3 PriorityA_61 2 0 2 PriorityA_61 PriorityA_45 
+X1[5]_3 PriorityA_62 2 0 2 PriorityA_62 PriorityA_49 
+X1[6]_3 PriorityA_63 2 0 2 PriorityA_63 PriorityA_54 
+X1[7]_3 PriorityA_64 2 0 2 PriorityA_64 PriorityA_65 
+X1[8]_3 PriorityA_65 2 0 2 PriorityA_66 PriorityA_67 

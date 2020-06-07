@@ -1,2 +1,2 @@
-wire[0:15]    XA;
-wire[0:7]     XB, XC, XD, XE, F, G, H;
+wire[0:8] Ab, EAb;
+wire PAi;

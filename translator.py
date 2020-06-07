@@ -1,14 +1,15 @@
 import re
 # def translator(src,dst):
 if __name__ == "__main__":
-    fin = open('c499.txt', 'r')
+    fin = open('C432A.txt', 'r')
     f = open('f_input.txt', 'w')
     f_output = open('f_output.txt', 'w')
     f_wire = open('f_wire.txt', 'w')
     f_gate = open('gate_.txt', 'w')
     # read all verilog file in list
     f_content = fin.readlines()
-    
+    print("title", (f_content[0].split())[1])
+    ckt_title = (f_content[0].split())[1]
 
     # seperate the file #
     # read content line by line
@@ -78,7 +79,7 @@ if __name__ == "__main__":
                 if count != 0:
                     input_arr.append(j.strip(',;'))
                 count += 1
-    print('input_arr',input_arr)
+    print('input_arr\n',input_arr)
     f_r_in.close()
 
     ##############
@@ -109,7 +110,7 @@ if __name__ == "__main__":
                             record_index2 = k     
                     outarr_num = int(j[record_index1:record_index2])
                     # outarr_num = int(j[9])
-                    print(outarr_num)
+                    # print(outarr_num)
                     count += 1
                 else:
                     # using th number we acquire from above and input the input array 
@@ -123,7 +124,7 @@ if __name__ == "__main__":
                 if count != 0:
                     output_arr.append(j.strip(',;'))
                 count += 1
-    print('output_arr',output_arr)
+    print('output_arr\n',output_arr)
     f_r_out.close()
 
     ############
@@ -155,9 +156,9 @@ if __name__ == "__main__":
                         if j[k] == ']':
                             record_index2 = k
                     # record_index1 = record_index1 + record_index2 
-                    print(record_index1)     
+                    # print(record_index1)     
                     wirearr_num = int(j[record_index1:record_index2])
-                    print(wirearr_num)
+                    # print(wirearr_num)
                     # wirearr_num = int(j[7])
                     count += 1
                 else:
@@ -172,7 +173,7 @@ if __name__ == "__main__":
                 if count != 0:
                     wire_arr.append(j.strip(',;'))
                 count += 1
-    print('wire_arr',wire_arr)
+    print('wire_arr\n',wire_arr)
     f_r_wire.close()
 
     ##################
@@ -182,7 +183,9 @@ if __name__ == "__main__":
     f_r_gate = open("gate_.txt", "r", encoding='UTF-8')
     # print("a",f_r_in_out_wire)
     flist_gate= list(f_r_gate)
-    # print("qq",flist_in_out_wire)
+
+    # print("qq",len(flist_gate))
+    
     count = 0
     wirearr_num = 0
     gate_freq = {}
@@ -222,11 +225,11 @@ if __name__ == "__main__":
             if count >= 3:
                 gate_input_num.get(pre_gate).append(j.strip('(),;'))
             count += 1
-    print("gate_input_num", gate_input_num)
+    print("gate_input_num\n", gate_input_num)
     # print("gate_input_num.get(N10): ", len(gate_input_num.get("N10")))
     # print("gate_input_num.get(N10)[0]: ", gate_input_num.get("N10")[0])
-    print('gate_freq: ',gate_freq)
-    print("wire_gate_relation: ",wire_gate_relation)
+    print('gate_freq: \n',gate_freq)
+    print("wire_gate_relation: \n",wire_gate_relation)
     f_r_gate.close()
     
     #################
@@ -243,51 +246,67 @@ if __name__ == "__main__":
     ## deal with input(1) and its branch(2)
     for i in range(len(input_arr)):
         # print(i)
-        column1.append(1)
+        
+        column1.append( input_arr[i]+ "_" + str(1)) # char format
+        # column1.append(1) # number format
         if gate_freq.get(input_arr[i]) != None and gate_freq.get(input_arr[i]) >= 2:
             for j in range(int(gate_freq.get(input_arr[i]))):
-                column1.append(2)
+                column1.append(input_arr[i]+ "_"  + str(2))
+                # column1.append(2) # number format
     ## deal with wire(inner gate output)(0) and its branch(2)
     for i in range(len(wire_arr)):
-        column1.append(0)
+        column1.append(wire_arr[i]+ "_" + str(0))
+        # column1.append(0) # number format
         if gate_freq.get(wire_arr[i]) != None and gate_freq.get(wire_arr[i]) >= 2:
             for j in range(int(gate_freq.get(wire_arr[i]))):
-                column1.append(2)
+                column1.append(wire_arr[i]+ "_" + str(2))
+                # column1.append(2) # number format
     ## deal with output gate(3)
     for i in range(len(output_arr)):
-        column1.append(3)
+        column1.append(output_arr[i]+ "_" + str(3))
+        # column1.append(3) # number format
 
-    print(column1)
+    print("column1: \n", column1)
 
     ## column 2 ##
     count = 1
-    map_id = {}
+    # put input_arr wire_arr and output_arr
+    map_id = {} 
     ## deal with input and its branch
     for i in range(len(input_arr)):
         # print(i)
-        column2.append(count)
-        map_id[input_arr[i]] = count
+        column2.append(ckt_title + "_" + str(count))
+        # column2.append(count)
+        # map_id[input_arr[i]] = ckt_title + "_" + str(count) # character format
+        map_id[input_arr[i]] = count # number format
         count += 1
         if gate_freq.get(input_arr[i]) != None and gate_freq.get(input_arr[i]) >= 2:
             for j in range(int(gate_freq.get(input_arr[i]))):
-                column2.append(count)
+                column2.append(ckt_title + "_" + str(count))
+                # column2.append(count)
                 count += 1
     ##deal with inner gate output and its branch
     for i in range(len(wire_arr)):
-        column2.append(count)
-        map_id[wire_arr[i]] = count
+        column2.append(ckt_title + "_" + str(count))
+        # column2.append(count)
+        # map_id[wire_arr[i]] = ckt_title + "_" + str(count) # character format
+        map_id[wire_arr[i]] = count # number format
         count += 1
         if gate_freq.get(wire_arr[i]) != None and gate_freq.get(wire_arr[i]) >= 2:
             for j in range(int(gate_freq.get(wire_arr[i]))):
-                column2.append(count)
+                column2.append(ckt_title + "_" + str(count))
+                # column2.append(count)
                 count += 1
     ## deal with output gate 
     for i in range(len(output_arr)):
-        column2.append(count)
-        map_id[output_arr[i]] = count
+        column2.append(ckt_title + "_" + str(count))
+        # column2.append(count)
+        # map_id[output_arr[i]] = ckt_title + "_" + str(count) # character format
+        map_id[output_arr[i]] = count # number format
         count += 1
 
-    print(column2)
+    print("column2: \n",column2)
+
     ## column 3 ##
     ## deal with input and its branch
     for i in range(len(input_arr)):
@@ -332,7 +351,7 @@ if __name__ == "__main__":
             column3.append(7)
         elif wire_gate_relation.get(output_arr[i]) == 'xnor':
             column3.append(8)
-    print(column3)
+    print("column3: \n", column3)
 
     ## column 4 ##
     count = -1
@@ -374,7 +393,7 @@ if __name__ == "__main__":
         column4.append(0)
         # count += 1
         # nonstopcount += 1
-    print(column4)
+    print("column4: \n", column4)
 
     ##############
     ## column 5 ##
@@ -418,11 +437,13 @@ if __name__ == "__main__":
                     while map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count in used:
                         count += 1
                         # print("count", count)
-                    gate_input_id.get(map_id.get(wire_arr[i])).append(map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count)
+                    gate_input_id.get(map_id.get(wire_arr[i])).append( ckt_title + "_" + str(map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count)) # char format
+                    # gate_input_id.get(map_id.get(wire_arr[i])).append( map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count ) # number format
                     used.append(map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count)
                     
                 elif gate_freq.get( gate_input_num.get(wire_arr[i])[j] ) == 1:
-                    gate_input_id.get(map_id.get(wire_arr[i])).append(map_id.get( gate_input_num.get(wire_arr[i])[j] ))
+                    gate_input_id.get(map_id.get(wire_arr[i])).append( ckt_title + "_"  + str(map_id.get( gate_input_num.get(wire_arr[i])[j] ))  ) # char format
+                    # gate_input_id.get(map_id.get(wire_arr[i])).append( map_id.get( gate_input_num.get(wire_arr[i])[j] ))   # number format 
             count = 1
     # process what is the line id input to the output gate 
     count = 1
@@ -435,15 +456,17 @@ if __name__ == "__main__":
                     while map_id.get( gate_input_num.get(output_arr[i])[j] ) + count in used:
                         count += 1
                         # print("count", count)
-                    gate_input_id.get(map_id.get(output_arr[i])).append(map_id.get( gate_input_num.get(output_arr[i])[j] ) + count)
+                    gate_input_id.get(map_id.get(output_arr[i])).append(  ckt_title + "_" + str(map_id.get( gate_input_num.get(output_arr[i])[j] ) + count) ) # char format
+                    # gate_input_id.get(map_id.get(output_arr[i])).append( map_id.get( gate_input_num.get(output_arr[i])[j] ) + count  ) # number format
                     used.append(map_id.get( gate_input_num.get(output_arr[i])[j] ) + count)
                     
                 elif gate_freq.get( gate_input_num.get(output_arr[i])[j] ) == 1:
-                    gate_input_id.get(map_id.get(output_arr[i])).append(map_id.get( gate_input_num.get(output_arr[i])[j] ))
+                    gate_input_id.get(map_id.get(output_arr[i])).append(  ckt_title + "_"  + str(map_id.get( gate_input_num.get(output_arr[i])[j] )) ) # char format
+                    # gate_input_id.get(map_id.get(output_arr[i])).append(  map_id.get( gate_input_num.get(output_arr[i])[j] )) # number format
             count = 1
 
     # print('used', used)
-    print('gate_input_id',gate_input_id)
+    print('gate_input_id: \n',gate_input_id)
 
 
     ######################
@@ -459,3 +482,28 @@ if __name__ == "__main__":
         f_result.writelines(['\n'])
 
     f_result.close()
+
+    # class Node():
+    #     def __init__(self, name, type1, id1, gtype, outline, inline, inputid):
+    #         self.name = name
+    #         self.type = type1
+    #         self.id = id1
+    #         self.gtype = gtype
+    #         self.outline = outline
+    #         self.inline = inline
+    #         self.inputid = inputid
+
+    # nodes.append(Node(column1, ..)) 
+
+    
+    # for i in range(len(column1)):
+    #     f_result.writelines([str(column1[i]), ' ', str(column2[i]), ' ', str(column3[i]), ' ', str(column4[i]), ' ', str(column5[i]),' '])
+    #     if i+1 in gate_input_id:
+    #         for j in range(len(gate_input_id.get(i+1))):
+    #             f_result.writelines([str(gate_input_id.get(i+1)[j]), ' '])
+    #     f_result.writelines(['\n'])
+
+    # def __str__(self):
+	# 	return str(self.name)+'\t'+str(self.type)+'\t'+str(self.id)+'\t'+str(self.gtype)+'\t'+str(self.outline)+'\t'+str(self.inline)+'\t'+str(self.inputid)
+	# def __repr__(self):
+	# 	return str(self.name)+'\t'+str(self.type)+'\t'+str(self.id)+'\t'+str(self.gtype)+'\t'+str(self.outline)+'\t'+str(self.inline)+'\t'+str(self.inputid)

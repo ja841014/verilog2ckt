@@ -1,0 +1,52 @@
+module PriorityB (E, X1, B, PB, X2);
+
+input[0:8] E, X1, B;
+output     PB;
+output[0:8] X2;
+wire[0:8] Eb, EbB, XEB;
+wire PBi;
+
+not Eb0 (Eb[0], E[0]);
+not Eb1 (Eb[1], E[1]);
+not Eb2 (Eb[2], E[2]);
+not Eb3 (Eb[3], E[3]);
+not Eb4 (Eb[4], E[4]);
+not Eb5 (Eb[5], E[5]);
+not Eb6 (Eb[6], E[6]);
+not Eb7 (Eb[7], E[7]);
+not Eb8 (Eb[8], E[8]);
+
+nor EbB0 (EbB[0], Eb[0], B[0]);
+nor EbB1 (EbB[1], Eb[1], B[1]);
+nor EbB2 (EbB[2], Eb[2], B[2]);
+nor EbB3 (EbB[3], Eb[3], B[3]);
+nor EbB4 (EbB[4], Eb[4], B[4]);
+nor EbB5 (EbB[5], Eb[5], B[5]);
+nor EbB6 (EbB[6], Eb[6], B[6]);
+nor EbB7 (EbB[7], Eb[7], B[7]);
+nor EbB8 (EbB[8], Eb[8], B[8]);
+
+nand XEB0 (XEB[0], EbB[0], X1[0]); 
+nand XEB1 (XEB[1], EbB[1], X1[1]); 
+nand XEB2 (XEB[2], EbB[2], X1[2]); 
+nand XEB3 (XEB[3], EbB[3], X1[3]); 
+nand XEB4 (XEB[4], EbB[4], X1[4]); 
+nand XEB5 (XEB[5], EbB[5], X1[5]); 
+nand XEB6 (XEB[6], EbB[6], X1[6]); 
+nand XEB7 (XEB[7], EbB[7], X1[7]); 
+nand XEB8 (XEB[8], EbB[8], X1[8]); 
+
+and PBigate (PBi, XEB[0], XEB[1], XEB[2], XEB[3], XEB[4], XEB[5], XEB[6], XEB[7]); 
+nand PBgate (PB, PBi, XEB[8]);
+
+xor X20 (X2[0], PB, XEB[0]);
+xor X21 (X2[1], PB, XEB[1]);
+xor X22 (X2[2], PB, XEB[2]);
+xor X23 (X2[3], PB, XEB[3]);
+xor X24 (X2[4], PB, XEB[4]);
+xor X25 (X2[5], PB, XEB[5]);
+xor X26 (X2[6], PB, XEB[6]);
+xor X27 (X2[7], PB, XEB[7]);
+xor X28 (X2[8], PB, XEB[8]);
+
+endmodule /* PriorityB */
