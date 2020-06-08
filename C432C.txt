@@ -1,0 +1,41 @@
+module PriorityC (E, X1, X2, C, PC);
+
+input[8:0] E, X1, X2, C;
+output     PC;
+wire[8:0] Eb, EbC, XEC;
+wire PCi;
+
+not Eb0 (Eb[0], E[0]);
+not Eb1 (Eb[1], E[1]);
+not Eb2 (Eb[2], E[2]);
+not Eb3 (Eb[3], E[3]);
+not Eb4 (Eb[4], E[4]);
+not Eb5 (Eb[5], E[5]);
+not Eb6 (Eb[6], E[6]);
+not Eb7 (Eb[7], E[7]);
+not Eb8 (Eb[8], E[8]);
+
+nor EbC0 (EbC[0], Eb[0], C[0]);
+nor EbC1 (EbC[1], Eb[1], C[1]);
+nor EbC2 (EbC[2], Eb[2], C[2]);
+nor EbC3 (EbC[3], Eb[3], C[3]);
+nor EbC4 (EbC[4], Eb[4], C[4]);
+nor EbC5 (EbC[5], Eb[5], C[5]);
+nor EbC6 (EbC[6], Eb[6], C[6]);
+nor EbC7 (EbC[7], Eb[7], C[7]);
+nor EbC8 (EbC[8], Eb[8], C[8]);
+
+nand XEC0 (XEC[0], EbC[0], X1[0], X2[0]); 
+nand XEC1 (XEC[1], EbC[1], X1[1], X2[1]); 
+nand XEC2 (XEC[2], EbC[2], X1[2], X2[2]); 
+nand XEC3 (XEC[3], EbC[3], X1[3], X2[3]); 
+nand XEC4 (XEC[4], EbC[4], X1[4], X2[4]); 
+nand XEC5 (XEC[5], EbC[5], X1[5], X2[5]); 
+nand XEC6 (XEC[6], EbC[6], X1[6], X2[6]); 
+nand XEC7 (XEC[7], EbC[7], X1[7], X2[7]); 
+nand XEC8 (XEC[8], EbC[8], X1[8], X2[8]); 
+
+and PCigate (PCi, XEC[0], XEC[1], XEC[2], XEC[3], XEC[4], XEC[5], XEC[6], XEC[7]);
+nand PCgate (PC, PCi, XEC[8]);
+
+endmodule /*PriorityC */

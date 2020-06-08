@@ -1,14 +1,25 @@
+module DecodeChan (I, Chan);
+
+input[8:0] I;
+output[3:0] Chan;
+wire Iand, Ib8, Ib1, Ib2, Ib3, Ib5, I56, I245, I3456, I1256;
+
 and Iandgate (Iand, I[0], I[1], I[2], I[3], I[4], I[5], I[6], I[7]);
 not Ib8gate (Ib8, I[8]);
 nor Chan3 (Chan[3], Iand, Ib8);
+
 not Ib1gate (Ib1, I[1]);
 not Ib2gate (Ib2, I[2]);
 not Ib3gate (Ib3, I[3]);
 not Ib5gate (Ib5, I[5]);
+
 nand I56gate (I56, Ib5, I[6]);
 nand I245gate (I245, Ib2, I[4], I[5]);
 nand I3456gate (I3456, Ib3, I[4], I[5], I[6]);
 nand I1256gate (I1256, Ib1, I[2], I[5], I[6]);
+
 nand Chan2 (Chan[2], I[4], I[6], I[7], I56);
 nand Chan1 (Chan[1], I[6], I[7], I245, I3456);
 nand Chan0 (Chan[0], I[7], I56, I1256, I3456);
+
+endmodule /* DecodeChan */
