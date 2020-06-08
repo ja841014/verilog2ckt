@@ -1,1 +1,1 @@
-output[3:0] Chan;
+output N223, N329, N370, N421, N430, N431, N432;
