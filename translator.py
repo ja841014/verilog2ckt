@@ -288,24 +288,24 @@ def translator_v2ckt(src, dst):
     for i in range(len(input_arr)):
         # print(i)
         
-        column1.append( input_arr[i]+ "_" + str(1)) # char format
-        # column1.append(1) # number format
+        # column1.append( input_arr[i]+ "_" + str(1)) # char format
+        column1.append(1) # number format
         if gate_freq.get(input_arr[i]) != None and gate_freq.get(input_arr[i]) >= 2:
             for j in range(int(gate_freq.get(input_arr[i]))):
-                column1.append(input_arr[i]+ "_"  + str(2))
-                # column1.append(2) # number format
+                # column1.append(input_arr[i]+ "_"  + str(2)) #char format
+                column1.append(2) # number format
     ## deal with wire(inner gate output)(0) and its branch(2)
     for i in range(len(wire_arr)):
-        column1.append(wire_arr[i]+ "_" + str(0))
-        # column1.append(0) # number format
+        # column1.append(wire_arr[i]+ "_" + str(0)) #char format
+        column1.append(0) # number format
         if gate_freq.get(wire_arr[i]) != None and gate_freq.get(wire_arr[i]) >= 2:
             for j in range(int(gate_freq.get(wire_arr[i]))):
-                column1.append(wire_arr[i]+ "_" + str(2))
-                # column1.append(2) # number format
+                # column1.append(wire_arr[i]+ "_" + str(2)) #char format
+                column1.append(2) # number format
     ## deal with output gate(3)
     for i in range(len(output_arr)):
-        column1.append(output_arr[i]+ "_" + str(3))
-        # column1.append(3) # number format
+        # column1.append(output_arr[i]+ "_" + str(3)) #char format
+        column1.append(3) # number format
 
     print("column1: \n", column1)
 
@@ -316,32 +316,32 @@ def translator_v2ckt(src, dst):
     ## deal with input and its branch
     for i in range(len(input_arr)):
         # print(i)
-        column2.append(ckt_title + "_" + str(count))
-        # column2.append(count)
+        # column2.append(ckt_title + "_" + str(count)) # char format
+        column2.append(count)
         # map_id[input_arr[i]] = ckt_title + "_" + str(count) # character format
         map_id[input_arr[i]] = count # number format
         count += 1
         if gate_freq.get(input_arr[i]) != None and gate_freq.get(input_arr[i]) >= 2:
             for j in range(int(gate_freq.get(input_arr[i]))):
-                column2.append(ckt_title + "_" + str(count))
-                # column2.append(count)
+                # column2.append(ckt_title + "_" + str(count)) # char format
+                column2.append(count)
                 count += 1
     ##deal with inner gate output and its branch
     for i in range(len(wire_arr)):
-        column2.append(ckt_title + "_" + str(count))
-        # column2.append(count)
+        # column2.append(ckt_title + "_" + str(count)) # char format
+        column2.append(count)
         # map_id[wire_arr[i]] = ckt_title + "_" + str(count) # character format
         map_id[wire_arr[i]] = count # number format
         count += 1
         if gate_freq.get(wire_arr[i]) != None and gate_freq.get(wire_arr[i]) >= 2:
             for j in range(int(gate_freq.get(wire_arr[i]))):
-                column2.append(ckt_title + "_" + str(count))
-                # column2.append(count)
+                # column2.append(ckt_title + "_" + str(count)) # char format
+                column2.append(count)
                 count += 1
     ## deal with output gate 
     for i in range(len(output_arr)):
-        column2.append(ckt_title + "_" + str(count))
-        # column2.append(count)
+        # column2.append(ckt_title + "_" + str(count)) # char format
+        column2.append(count)
         # map_id[output_arr[i]] = ckt_title + "_" + str(count) # character format
         map_id[output_arr[i]] = count # number format
         count += 1
@@ -479,13 +479,13 @@ def translator_v2ckt(src, dst):
                     while map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count in used:
                         count += 1
                         # print("count", count)
-                    gate_input_id.get(map_id.get(wire_arr[i])).append( ckt_title + "_" + str(map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count)) # char format
-                    # gate_input_id.get(map_id.get(wire_arr[i])).append( map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count ) # number format
+                    # gate_input_id.get(map_id.get(wire_arr[i])).append( ckt_title + "_" + str(map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count)) # char format
+                    gate_input_id.get(map_id.get(wire_arr[i])).append( map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count ) # number format
                     used.append(map_id.get( gate_input_num.get(wire_arr[i])[j] ) + count)
                     
                 elif gate_freq.get( gate_input_num.get(wire_arr[i])[j] ) == 1:
-                    gate_input_id.get(map_id.get(wire_arr[i])).append( ckt_title + "_"  + str(map_id.get( gate_input_num.get(wire_arr[i])[j] ))  ) # char format
-                    # gate_input_id.get(map_id.get(wire_arr[i])).append( map_id.get( gate_input_num.get(wire_arr[i])[j] ))   # number format 
+                    # gate_input_id.get(map_id.get(wire_arr[i])).append( ckt_title + "_"  + str(map_id.get( gate_input_num.get(wire_arr[i])[j] ))  ) # char format
+                    gate_input_id.get(map_id.get(wire_arr[i])).append( map_id.get( gate_input_num.get(wire_arr[i])[j] ))   # number format 
             count = 1
     # process what is the line id input to the output gate 
     count = 1
@@ -498,13 +498,13 @@ def translator_v2ckt(src, dst):
                     while map_id.get( gate_input_num.get(output_arr[i])[j] ) + count in used:
                         count += 1
                         # print("count", count)
-                    gate_input_id.get(map_id.get(output_arr[i])).append(  ckt_title + "_" + str(map_id.get( gate_input_num.get(output_arr[i])[j] ) + count) ) # char format
-                    # gate_input_id.get(map_id.get(output_arr[i])).append( map_id.get( gate_input_num.get(output_arr[i])[j] ) + count  ) # number format
+                    # gate_input_id.get(map_id.get(output_arr[i])).append(  ckt_title + "_" + str(map_id.get( gate_input_num.get(output_arr[i])[j] ) + count) ) # char format
+                    gate_input_id.get(map_id.get(output_arr[i])).append( map_id.get( gate_input_num.get(output_arr[i])[j] ) + count  ) # number format
                     used.append(map_id.get( gate_input_num.get(output_arr[i])[j] ) + count)
                     
                 elif gate_freq.get( gate_input_num.get(output_arr[i])[j] ) == 1:
-                    gate_input_id.get(map_id.get(output_arr[i])).append(  ckt_title + "_"  + str(map_id.get( gate_input_num.get(output_arr[i])[j] )) ) # char format
-                    # gate_input_id.get(map_id.get(output_arr[i])).append(  map_id.get( gate_input_num.get(output_arr[i])[j] )) # number format
+                    # gate_input_id.get(map_id.get(output_arr[i])).append(  ckt_title + "_"  + str(map_id.get( gate_input_num.get(output_arr[i])[j] )) ) # char format
+                    gate_input_id.get(map_id.get(output_arr[i])).append(  map_id.get( gate_input_num.get(output_arr[i])[j] )) # number format
             count = 1
 
     # print('used', used)
